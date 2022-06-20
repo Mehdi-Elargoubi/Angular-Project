@@ -1,0 +1,188 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 65536 bytes for Failed to commit metaspace.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (virtualSpaceNode.cpp:110), pid=18652, tid=25412
+#
+# JRE version: OpenJDK Runtime Environment Temurin-17.0.3+7 (17.0.3+7) (build 17.0.3+7)
+# Java VM: OpenJDK 64-Bit Server VM Temurin-17.0.3+7 (17.0.3+7, mixed mode, emulated-client, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Dsts.lsp.client=vscode -Dsts.log.file=/dev/null -XX:TieredStopAtLevel=1 -Dspring.config.location=file:c:\Users\MAHDI\.vscode\extensions\pivotal.vscode-spring-boot-1.33.0\language-server\BOOT-INF\classes\application.properties org.springframework.ide.vscode.boot.app.BootLanguageServerBootApp
+
+Host: Intel(R) Core(TM) i5-6300U CPU @ 2.40GHz, 4 cores, 7G,  Windows 10 , 64 bit Build 19041 (10.0.19041.1706)
+Time: Thu Jun 16 17:39:14 2022 Maroc (heure d64 bit Build 19041 (10.0.19041.1706) elapsed time: 7.825615 seconds (0d 0h 0m 7s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000263386b0a60):  JavaThread "main" [_thread_in_vm, id=25412, stack(0x000000af22b00000,0x000000af22c00000)]
+
+Stack: [0x000000af22b00000,0x000000af22c00000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x675efa]
+V  [jvm.dll+0x830a24]
+V  [jvm.dll+0x8321ce]
+V  [jvm.dll+0x832833]
+V  [jvm.dll+0x2454b5]
+V  [jvm.dll+0x82c9cb]
+V  [jvm.dll+0x61ab26]
+V  [jvm.dll+0x61ab8a]
+V  [jvm.dll+0x61d3aa]
+V  [jvm.dll+0x61b4c6]
+V  [jvm.dll+0x23ae70]
+V  [jvm.dll+0x1eab7d]
+V  [jvm.dll+0x1e05b1]
+V  [jvm.dll+0x53bb80]
+V  [jvm.dll+0x1f0da7]
+V  [jvm.dll+0x7aae5b]
+V  [jvm.dll+0x7ac202]
+V  [jvm.dll+0x7ac538]
+V  [jvm.dll+0x23d79e]
+V  [jvm.dll+0x37ed5e]
+C  0x000002633b349a6e
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  java.beans.Introspector.getTargetMethodInfo()[Ljava/beans/MethodDescriptor;+202 java.desktop@17.0.3
+j  java.beans.Introspector.getBeanInfo()Ljava/beans/BeanInfo;+6 java.desktop@17.0.3
+j  java.beans.Introspector.getBeanInfo(Ljava/lang/Class;Ljava/lang/Class;I)Ljava/beans/BeanInfo;+27 java.desktop@17.0.3
+j  java.beans.Introspector.<init>(Ljava/lang/Class;Ljava/lang/Class;I)V+141 java.desktop@17.0.3
+j  java.beans.Introspector.getBeanInfo(Ljava/lang/Class;Ljava/lang/Class;I)Ljava/beans/BeanInfo;+24 java.desktop@17.0.3
+j  java.beans.Introspector.getBeanInfo(Ljava/lang/Class;I)Ljava/beans/BeanInfo;+3 java.desktop@17.0.3
+j  org.springframework.beans.CachedIntrospectionResults.getBeanInfo(Ljava/lang/Class;)Ljava/beans/BeanInfo;+53
+j  org.springframework.beans.CachedIntrospectionResults.<init>(Ljava/lang/Class;)V+52
+j  org.springframework.beans.CachedIntrospectionResults.forClass(Ljava/lang/Class;)Lorg/springframework/beans/CachedIntrospectionResults;+43
+j  org.springframework.beans.BeanWrapperImpl.getCachedIntrospectionResults()Lorg/springframework/beans/CachedIntrospectionResults;+12
+j  org.springframework.beans.BeanWrapperImpl.getLocalPropertyHandler(Ljava/lang/String;)Lorg/springframework/beans/BeanWrapperImpl$BeanPropertyHandler;+1
+j  org.springframework.beans.BeanWrapperImpl.getLocalPropertyHandler(Ljava/lang/String;)Lorg/springframework/beans/AbstractNestablePropertyAccessor$PropertyHandler;+2
+j  org.springframework.beans.AbstractNestablePropertyAccessor.getPropertyHandler(Ljava/lang/String;)Lorg/springframework/beans/AbstractNestablePropertyAccessor$PropertyHandler;+19
+j  org.springframework.beans.AbstractNestablePropertyAccessor.isWritableProperty(Ljava/lang/String;)Z+2
+j  org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(Ljava/lang/String;Lorg/springframework/beans/factory/config/BeanDefinition;Lorg/springframework/beans/BeanWrapper;Lorg/springframework/beans/PropertyValues;)V+320
+j  org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(Ljava/lang/String;Lorg/springframework/beans/factory/support/RootBeanDefinition;Lorg/springframework/beans/BeanWrapper;)V+392
+j  org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(Ljava/lang/String;Lorg/springframework/beans/factory/support/RootBeanDefinition;[Ljava/lang/Object;)Ljava/lang/Object;+237
+j  org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(Ljava/lang/String;Lorg/springframework/beans/factory/support/RootBeanDefinition;[Ljava/lang/Object;)Ljava/lang/Object;+169
+j  org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(Ljava/lang/String;Lorg/springframework/beans/factory/support/RootBeanDefinition;[Ljava/lang/Object;)Ljava/lang/Object;+4
+j  org.springframework.beans.factory.support.AbstractBeanFactory$$Lambda$205+0x000000010028cf40.getObject()Ljava/lang/Object;+16
+j  org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(Ljava/lang/String;Lorg/springframework/beans/factory/ObjectFactory;)Ljava/lang/Object;+132
+j  org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/Object;Z)Ljava/lang/Object;+467
+j  org.springframework.beans.factory.support.AbstractBeanFactory.getBean(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;+5
+j  org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(Lorg/springframework/beans/factory/config/ConfigurableListableBeanFactory;Ljava/util/List;)V+184
+j  org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(Lorg/springframework/beans/factory/config/ConfigurableListableBeanFactory;)V+5
+j  org.springframework.context.support.AbstractApplicationContext.refresh()V+28
+j  org.springframework.boot.SpringApplication.refresh(Lorg/springframework/context/ConfigurableApplicationContext;)V+1
+j  org.springframework.boot.SpringApplication.refresh(Lorg/springframework/context/ApplicationContext;)V+11
+j  org.springframework.boot.SpringApplication.refreshContext(Lorg/springframework/context/ConfigurableApplicationContext;)V+19
+j  org.springframework.boot.SpringApplication.run([Ljava/lang/String;)Lorg/springframework/context/ConfigurableApplicationContext;+118
+j  org.springframework.boot.SpringApplication.run([Ljava/lang/Class;[Ljava/lang/String;)Lorg/springframework/context/ConfigurableApplicationContext;+9
+j  org.springframework.boot.SpringApplication.run(Ljava/lang/Class;[Ljava/lang/String;)Lorg/springframework/context/ConfigurableApplicationContext;+9
+j  org.springframework.ide.vscode.boot.app.BootLanguageServerBootApp.main([Ljava/lang/String;)V+19
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x000002634615da90, length=12, elements={
+0x00000263386b0a60, 0x0000026345231740, 0x00000263452325b0, 0x00000263452422b0,
+0x0000026345244f30, 0x00000263452458e0, 0x0000026345c1b500, 0x0000026345c1bf60,
+0x0000026345c1e010, 0x0000026345d48bb0, 0x0000026345d5d010, 0x00000263365ba820
+}
+
+Java Threads: ( => current thread )
+=>0x00000263386b0a60 JavaThread "main" [_thread_in_vm, id=25412, stack(0x000000af22b00000,0x000000af22c00000)]
+  0x0000026345231740 JavaThread "Reference Handler" daemon [_thread_blocked, id=26532, stack(0x000000af23200000,0x000000af23300000)]
+  0x00000263452325b0 JavaThread "Finalizer" daemon [_thread_blocked, id=15216, stack(0x000000af23300000,0x000000af23400000)]
+  0x00000263452422b0 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=29236, stack(0x000000af23400000,0x000000af23500000)]
+  0x0000026345244f30 JavaThread "Attach Listener" daemon [_thread_blocked, id=28232, stack(0x000000af23500000,0x000000af23600000)]
+  0x00000263452458e0 JavaThread "Service Thread" daemon [_thread_blocked, id=30052, stack(0x000000af23600000,0x000000af23700000)]
+  0x0000026345c1b500 JavaThread "Monitor Deflation Thread" daemon [_thread_blocked, id=14440, stack(0x000000af23700000,0x000000af23800000)]
+  0x0000026345c1bf60 JavaThread "C1 CompilerThread0" daemon [_thread_blocked, id=20984, stack(0x000000af23800000,0x000000af23900000)]
+  0x0000026345c1e010 JavaThread "Sweeper thread" daemon [_thread_blocked, id=24368, stack(0x000000af23900000,0x000000af23a00000)]
+  0x0000026345d48bb0 JavaThread "Notification Thread" daemon [_thread_blocked, id=28836, stack(0x000000af23a00000,0x000000af23b00000)]
+  0x0000026345d5d010 JavaThread "Common-Cleaner" daemon [_thread_blocked, id=1296, stack(0x000000af23c00000,0x000000af23d00000)]
+  0x00000263365ba820 JavaThread "C1 CompilerThread1" daemon [_thread_blocked, id=27868, stack(0x000000af23d00000,0x000000af23e00000)]
+
+Other Threads:
+  0x00000263451de110 VMThread "VM Thread" [stack: 0x000000af23100000,0x000000af23200000] [id=28080]
+  0x0000026345d49080 WatcherThread [stack: 0x000000af23b00000,0x000000af23c00000] [id=19260]
+  0x0000026338707170 GCTaskThread "GC Thread#0" [stack: 0x000000af22c00000,0x000000af22d00000] [id=28724]
+  0x00000263463e63f0 GCTaskThread "GC Thread#1" [stack: 0x000000af23e00000,0x000000af23f00000] [id=8380]
+  0x00000263463e6c00 GCTaskThread "GC Thread#2" [stack: 0x000000af23f00000,0x000000af24000000] [id=3824]
+  0x00000263463e5e90 GCTaskThread "GC Thread#3" [stack: 0x000000af24000000,0x000000af24100000] [id=16728]
+  0x0000026338717cf0 ConcurrentGCThread "G1 Main Marker" [stack: 0x000000af22d00000,0x000000af22e00000] [id=8700]
+  0x0000026338719720 ConcurrentGCThread "G1 Conc#0" [stack: 0x000000af22e00000,0x000000af22f00000] [id=17696]
+  0x000002633877e5d0 ConcurrentGCThread "G1 Refine#0" [stack: 0x000000af22f00000,0x000000af23000000] [id=6152]
+  0x00000263450801f0 ConcurrentGCThread "G1 Service" [stack: 0x000000af23000000,0x000000af23100000] [id=17032]
+
+Threads with active compile tasks:
+
+VM state: not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00000263364eb600] Metaspace_lock - owner thread: 0x00000263386b0a60
+
+Heap address: 0x0000000081e00000, size: 2018 MB, Compressed Oops mode: 32-bit
+
+CDS archive(s) not mapped
+Compressed class space mapped at: 0x0000000100000000-0x0000000140000000, reserved size: 1073741824
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 3, Narrow klass range: 0x140000000
+
+GC Precious Log:
+ CPUs: 4 total, 4 available
+ Memory: 8067M
+ Large Page Support: Disabled
+ NUMA Support: Disabled
+ Compressed Oops: Enabled (32-bit)
+ Heap Region Size: 1M
+ Heap Min Capacity: 8M
+ Heap Initial Capacity: 128M
+ Heap Max Capacity: 2018M
+ Pre-touch: Disabled
+ Parallel Workers: 4
+ Concurrent Workers: 1
+ Concurrent Refinement Workers: 4
+ Periodic GC: Disabled
+
+Heap:
+ garbage-first heap   total 131072K, used 24662K [0x0000000081e00000, 0x0000000100000000)
+  region size 1024K, 22 young (22528K), 2 survivors (2048K)
+ Metaspace       used 19185K, committed 19392K, reserved 1073152K
+  class space    used 2388K, committed 2496K, reserved 1048576K
+
+Heap Regions: E=young(eden), S=young(survivor), O=old, HS=humongous(starts), HC=humongous(continues), CS=collection set, F=free, OA=open archive, CA=closed archive, TAMS=top-at-mark-start (previous, next)
+|   0|0x0000000081e00000, 0x0000000081f00000, 0x0000000081f00000|100%| O|  |TAMS 0x0000000081e00000, 0x0000000081e00000| Untracked 
+|   1|0x0000000081f00000, 0x0000000082000000, 0x0000000082000000|100%| O|  |TAMS 0x0000000081f00000, 0x0000000081f00000| Untracked 
+|   2|0x0000000082000000, 0x0000000082100000, 0x0000000082100000|100%| O|  |TAMS 0x0000000082000000, 0x0000000082000000| Untracked 
+|   3|0x0000000082100000, 0x0000000082200000, 0x0000000082200000|100%| O|  |TAMS 0x0000000082100000, 0x0000000082100000| Untracked 
+|   4|0x0000000082200000, 0x0000000082228c00, 0x0000000082300000| 15%| O|  |TAMS 0x0000000082200000, 0x0000000082200000| Untracked 
+|   5|0x0000000082300000, 0x0000000082300000, 0x0000000082400000|  0%| F|  |TAMS 0x0000000082300000, 0x0000000082300000| Untracked 
+|   6|0x0000000082400000, 0x0000000082400000, 0x0000000082500000|  0%| F|  |TAMS 0x0000000082400000, 0x0000000082400000| Untracked 
+|   7|0x0000000082500000, 0x0000000082500000, 0x0000000082600000|  0%| F|  |TAMS 0x0000000082500000, 0x0000000082500000| Untracked 
+|   8|0x0000000082600000, 0x0000000082600000, 0x0000000082700000|  0%| F|  |TAMS 0x0000000082600000, 0x0000000082600000| Untracked 
+|   9|0x0000000082700000, 0x0000000082700000, 0x0000000082800000|  0%| F|  |TAMS 0x0000000082700000, 0x0000000082700000| Untracked 
+|  10|0x0000000082800000, 0x0000000082800000, 0x0000000082900000|  0%| F|  |TAMS 0x0000000082800000, 0x0000000082800000| Untracked 
+|  11|0x0000000082900000, 0x0000000082900000, 0x0000000082a00000|  0%| F|  |TAMS 0x0000000082900000, 0x0000000082900000| Untracked 
+|  12|0x0000000082a00000, 0x0000000082a00000, 0x0000000082b00000|  0%| F|  |TAMS 0x0000000082a00000, 0x0000000082a00000| Untracked 
+|  13|0x0000000082b00000, 0x0000000082b00000, 0x0000000082c00000|  0%| F|  |TAMS 0x0000000082b00000, 0x0000000082b00000| Untracked 
+|  14|0x0000000082c00000, 0x0000000082c00000, 0x0000000082d00000|  0%| F|  |TAMS 0x0000000082c00000, 0x0000000082c00000| Untracked 
+|  15|0x0000000082d00000, 0x0000000082d00000, 0x0000000082e00000|  0%| F|  |TAMS 0x0000000082d00000, 0x0000000082d00000| Untracked 
+|  16|0x0000000082e00000, 0x0000000082e00000, 0x0000000082f00000|  0%| F|  |TAMS 0x0000000082e00000, 0x0000000082e00000| Untracked 
+|  17|0x0000000082f00000, 0x0000000082f00000, 0x0000000083000000|  0%| F|  |TAMS 0x0000000082f00000, 0x0000000082f00000| Untracked 
+|  18|0x0000000083000000, 0x0000000083000000, 0x0000000083100000|  0%| F|  |TAMS 0x0000000083000000, 0x0000000083000000| Untracked 
+|  19|0x0000000083100000, 0x0000000083100000, 0x0000000083200000|  0%| F|  |TAMS 0x0000000083100000, 0x0000000083100000| Untracked 
+|  20|0x0000000083200000, 0x0000000083200000, 0x0000000083300000|  0%| F|  |TAMS 0x0000000083200000, 0x0000000083200000| Untracked 
+|  21|0x0000000083300000, 0x0000000083300000, 0x0000000083400000|  0%| F|  |TAMS 0x0000000083300000, 0x0000000083300000| Untracked 

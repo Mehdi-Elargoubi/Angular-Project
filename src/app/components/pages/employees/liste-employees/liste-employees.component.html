@@ -1,0 +1,57 @@
+<p>liste-employees works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <style>
+input:hover , select:hover{
+    border: 1px solid rgb(142, 142, 142);
+    border: 1px solid rgb(178, 206, 255);
+    background-color: rgb(232, 240, 254);
+}
+p{
+  font-family: 'Times New Roman', Times, serif;
+}
+  </style>
+
+</head>
+<body style="background-color: #f0f5ff;">
+
+    <div class="row mt-5 pt-4 ms-4 me-4 ">
+                <!-- SEARCH FORM -->
+        <form class="d-flex  col-sm-6 " role="search" method="" action="">
+            <input class="form-control me-2" type="search" placeholder="Chercher un collaborateur . . ." aria-label="Search">
+            <div class="input-group-append">
+                <button class="btn btn-navbar" type="submit" id="chercher" name="chercher" >
+                    <!-- <i class="fas fa-search"></i> -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                      <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                    </svg>
+                </button>
+            </div>
+        </form>
+        <div class="col-sm-3"></div>
+                <!-- Icon d'ajout collaborateur -->
+        <form class="d-flex  col-sm-2" role="ajouter" method="get" action="">
+          <a routerLink="/recrutement" routerLinkActive="active">
+            <button type="submit" id="ajouter_collab" name="ajouter_collab" class="btn btn-outline-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-plus-fill me-2" viewBox="0 0 16 16">
+                    <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path>
+                    <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"></path>
+                </svg>
+                <b><span>Collaborateur</span></b>
+            </button>
+          </a>
+        </form>
+    </div>
+    <hr class="border-primary opacity-50 mb-4 text-secondary me-3 ms-3 mt-5 " >
+    <p class="text text-center text-secondary fs-1" >Liste des employés</p>
+</body>
+</html>
